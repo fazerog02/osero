@@ -130,10 +130,10 @@ public:
                 if(!(next_x >= 0 && next_x < FIELD_SIZE)) break;
                 if(!(next_y >= 0 && next_y < FIELD_SIZE)) break;
 
-                if(this->field[next_y][next_y] == NONE){
+                if(this->field[next_y][next_x] == NONE){
                     // 挟めるものがなければ探索をやめる
                     break;
-                } else if(this->field[next_y][next_y] == disc_type){
+                } else if(this->field[next_y][next_x] == disc_type){
                     // 挟んだ石を配列に入れる
                     for(int i_f = 0; i_f < found_discs.size(); i_f++){
                         changeable_discs.push_back(found_discs[i_f]);
@@ -141,8 +141,7 @@ public:
                     break;
                 } else {
                     // 挟める石があれば配列に入れる
-                    int _disc_type = (disc_type == BLACK) ? WHITE : BLACK;
-                    found_discs.push_back(make_tuple(_disc_type, next_x, next_y));
+                    found_discs.push_back(make_tuple(disc_type, next_x, next_y));
                 }
             }
         }
