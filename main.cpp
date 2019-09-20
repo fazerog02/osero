@@ -64,12 +64,17 @@ public:
         return;
     }
 
+    vector<vector<int>> getField(){
+        return this->field;
+    }
+
     int getTurn(){
         return this->turn;
     }
 
     void printTurn(){
-        cout << "TURN: " + to_string(this->turn) << endl;
+        int turn_disc_color = (this->turn % 2 == 0) ? BLACK : WHITE;
+        cout << (turn_disc_color == BLACK ? "BLACK" : "WHITE") << "'s TURN" << endl;
         return;
     }
 
@@ -184,11 +189,9 @@ int main()
         game_controller.printTurn();
         cout << endl;
 
-        int turn = game_controller.getTurn();
         // 奇数なら白、偶数なら黒
+        int turn = game_controller.getTurn();
         int turn_disc_color = (turn % 2 == 0) ? BLACK : WHITE;
-        cout << (turn_disc_color == BLACK ? "BLACK" : "WHITE") << "'s TURN" << endl;
-        cout << endl;
 
         cout << "BLACK: " << to_string(get<0>(game_controller.getNumOfDiscs())) << ", " << "WHITE: " << to_string(get<1>(game_controller.getNumOfDiscs())) << endl;
         cout << endl;
