@@ -1,7 +1,6 @@
 #include <iostream>
 #include <vector>
 #include <tuple>
-#include <unistd.h>
 
 using namespace std;
 
@@ -185,7 +184,6 @@ int main()
 
     while(1){
         // ゲーム情報の表示
-        system("clear");
         game_controller.printTurn();
         cout << endl;
 
