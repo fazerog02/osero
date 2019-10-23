@@ -195,27 +195,17 @@ int main()
         cout << endl;
         game_controller.printField();
 
-        // 石を置く座標の入力処理
-        while(1){
-            string command;
-            cout << "input command (input: input x and y, pass: pass this turn)" << endl;
-            cin >> command;
-            if(command == "input"){
-                int input_x, input_y;
-                cout << "input x and y" << endl << ">>>";
-                cin >> input_x >> input_y;
-
-                string put_result = game_controller.putDisc(turn_disc_color, input_x, input_y);
-
-                if(put_result == "ok"){
-                    break;
-                } else {
-                    cout << put_result << endl;
-                }
-            } else if(command == "pass"){
-                break;
-            }
+        
+        if(turn_disc_color == BLACK){
+            
+            // write your code
+            
+        } else if(turn_disc_color == WHITE){
+            
+            // write your code
+            
         }
+        
 
         if(game_controller.checkGameEnd()) break;
 
